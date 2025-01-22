@@ -51,3 +51,32 @@ def plot_streamlines(rect, times):
 
     plt.tight_layout()
     plt.show()
+
+    def plot_trajectory(rect):
+    # Построение траектории
+    fig, ax = plt.subplots(figsize=(6, 6))
+    fig.canvas.manager.set_window_title("Траектория движения прямоугольника")
+
+    # Начальное положение
+    initial_corners = rect.trajectory[0]
+    x_init, y_init = zip(*initial_corners)
+    ax.plot(x_init + (x_init[0],), y_init + (y_init[0],), 'bo-', label="Начальное положение")
+
+    # Конечное положение
+    final_corners = rect.trajectory[-1]
+    x_final, y_final = zip(*final_corners)
+    ax.plot(x_final + (x_final[0],), y_final + (y_final[0],), 'ro-', label="Конечное положение")
+
+    # Траектория движения углов
+    for i in range(4):
+        x_traj = [step[i][0] for step in rect.trajectory]
+        y_traj = [step[i][1] for step in rect.trajectory]
+        ax.plot(x_traj, y_traj, 'g--', label=f"Траектория угла {i+1}" if i == 0 else "")
+
+    ax.set_xlim(-20, 20)
+    ax.set_ylim(-20, 20)
+    ax.axhline(0, color='black', linewidth=0.5)
+    ax.axvline(0, color='black', linewidth=0.5)
+    ax.grid(color='gray', linestyle='--', linewidth=0.5)
+    ax.legend()
+    plt.show()
