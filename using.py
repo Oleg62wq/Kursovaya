@@ -57,7 +57,7 @@ def plot_streamlines(rect, times):
     plt.tight_layout()
     plt.show()
 
-    def plot_trajectory(rect):
+def plot_trajectory(rect):
     # Построение траектории
     fig, ax = plt.subplots(figsize=(6, 6))
     fig.canvas.manager.set_window_title("Траектория движения прямоугольника")
