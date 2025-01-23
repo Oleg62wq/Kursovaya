@@ -1,3 +1,6 @@
+from Object import Rectangle
+from moving import MovingRectangle
+
 def plot_velocity_distribution(rect, times):
     # Построение распределения скоростей для разных моментов времени
     fig, axs = plt.subplots(1, len(times), figsize=(15, 5))
