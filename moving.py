@@ -1,3 +1,4 @@
+from Object import Rectangle
 class MovingRectangle(Rectangle):
     def __init__(self, center_x, center_y, width=3, height=2, angle=0):
         super().__init__(center_x, center_y, width, height, angle)
