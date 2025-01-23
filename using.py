@@ -1,3 +1,6 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
 from Object import Rectangle
 from moving import MovingRectangle
 if __name__ == "__main__":
