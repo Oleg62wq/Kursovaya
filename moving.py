@@ -1,3 +1,6 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
 from Object import Rectangle
 class MovingRectangle(Rectangle):
     def __init__(self, center_x, center_y, width=3, height=2, angle=0):
