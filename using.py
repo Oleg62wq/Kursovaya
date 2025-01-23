@@ -1,3 +1,5 @@
+from Object import Rectangle
+from moving import MovingRectangle
 if __name__ == "__main__":
     try:
         center_x = float(input("Введите X координату центра прямоугольника: "))
